@@ -122,11 +122,6 @@ public class UsuarioController {
 		return "users";
 	}
 
-	/*@GetMapping("/login")
-	public String login() {
-		return "login";
-	}*/
-	
 	//Primer método que se carga al arrancar el programa
 	@GetMapping("/")
 	public String profile(Model model, Principal principal, UsuarioForm usuarioForm) throws Exception {
@@ -140,6 +135,10 @@ public class UsuarioController {
 		model.addAttribute("usuario", user);
 		
 		return "profile";
+	}
 	
+	@GetMapping("log")
+	public String log() {
+		return "login";
 	}
 }
