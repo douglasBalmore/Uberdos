@@ -1,4 +1,4 @@
-package com.authentication.main.valitation;
+package com.uberdos.main.valitation;
 
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.User;
@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import com.authentication.main.repositories.IUsuarioRepository;
+import com.uberdos.main.repositories.IUsuarioRepository;
 
 /*
  * Nombre de la clase: UsuarioDetails
@@ -29,10 +29,10 @@ public class UsuarioDetails implements UserDetailsService{
 	 
 	 @Override
 	 public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		 return usuarioRepository.findByEmail(email)
+		 return usuarioRepository.findByEmail(email) 
 				 .map(user -> new User(user.getEmail(),
-						 user.getPassword(), user.isEnabled(),
-						 user.isEnabled(), user.isEnabled(), user.isEnabled(),
+						 user.getPassword(), user.getEnabled(),
+						 user.getEnabled(), user.getEnabled(), user.getEnabled(),
 						 AuthorityUtils.createAuthorityList("USER")
 						 ))
 				 .orElseThrow(() -> new UsernameNotFoundException("can't find"));

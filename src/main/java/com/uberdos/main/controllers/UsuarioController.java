@@ -1,4 +1,4 @@
-package com.authentication.main.controllers;
+package com.uberdos.main.controllers;
 
 import java.security.Principal;
 import java.text.ParseException;
@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.authentication.main.entities.Usuario;
-import com.authentication.main.entities.UsuarioForm;
-import com.authentication.main.repositories.IUsuarioRepository;
+import com.uberdos.main.entities.Usuario;
+import com.uberdos.main.entities.UsuarioForm;
+import com.uberdos.main.repositories.IUsuarioRepository;
 
 @Controller
 @RequestMapping(value = "userController")
@@ -43,14 +43,16 @@ public class UsuarioController {
 		if (usuarioForm.getName().matches("^[a-zA-Z0-9]{3,}$") && req.getParameter("repetirContrasenhia") != null && req.getParameter("repetirContrasenhia").equals(usuarioForm.getPassword())){
 			usuario = new Usuario(usuarioForm.getName().trim(), 
 					usuarioForm.getApellido().trim(),
+					usuarioForm.getDui().trim(),
+					fecha,
+					usuarioForm.getDireccion().trim(),
 					usuarioForm.getTelefono().trim(),
 					usuarioForm.getEmail().trim(),
 					new BCryptPasswordEncoder().encode(usuarioForm.getPassword()),
-					fecha,
 					usuarioForm.getSexo(),
-					usuarioForm.getNombreContactoEmergencia(),
-					usuarioForm.getNumeroContactoEmergencia(),
-					true);
+					usuarioForm.getBiografia(),
+					true,
+					usuarioForm.getTipo());
 		}
 		else {
 			result.rejectValue("name", "username");
@@ -82,10 +84,8 @@ public class UsuarioController {
 			usuario.setApellido(req.getParameter("apellido").trim());
 			usuario.setSexo(req.getParameter("sexo").trim());
 			usuario.setEmail(req.getParameter("email").trim());
-			usuario.setFechaNacimiento(fecha);
+			usuario.setFecha(fecha);
 			usuario.setTelefono(req.getParameter("telefono"));
-			usuario.setNombreContactoEmergencia(req.getParameter("nombreContactoEmergencia"));
-			usuario.setNumeroContactoEmergencia(req.getParameter("numeroContactoEmergencia"));
 			usuario.setEnabled(true);
 			
 			/* usuario = new Usuario(id,

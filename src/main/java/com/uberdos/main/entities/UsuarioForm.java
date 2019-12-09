@@ -1,4 +1,4 @@
-package com.authentication.main.entities;
+package com.uberdos.main.entities;
 
 import java.util.Date;
 
@@ -15,30 +15,35 @@ public class UsuarioForm {
 	private Long id;
 	private String name;	
 	private String apellido;
+	private String dui;
+	private Date fecha;
+	private String direccion;
 	private String telefono;
 	private String email;
 	private String password;
-	private Date fechaNacimiento;
 	private String sexo;
-	private String nombreContactoEmergencia;
-	private String numeroContactoEmergencia;
+	private String biografia;
+	private String tipo;
 	
 	//Métodos constructores
 	public UsuarioForm() {
 		
 	}
 	
-	public UsuarioForm(String name, String apellido, String telefono, String email, String password, 
-			String sexo, String nombreContactoEmergencia, String numeroContactoEmergencia)
+	public UsuarioForm(String name, String apellido, String dui, Date fecha, String direccion, String telefono, String email, String password, 
+			String sexo, String biografia, String tipo)
 	{
 		this.name = name;
 		this.apellido = apellido;
+		this.dui = dui;
+		this.fecha = fecha;
+		this.direccion = direccion;
 		this.telefono = telefono;
 		this.email = email;
 		this.password = password;
 		this.sexo = sexo;
-		this.nombreContactoEmergencia = nombreContactoEmergencia;
-		this.numeroContactoEmergencia = numeroContactoEmergencia;
+		this.biografia = biografia;
+		this.tipo = tipo;
 	}
 	
 	//Métodos Getter y Setter
@@ -90,12 +95,12 @@ public class UsuarioForm {
 		this.password = password;
 	}
 
-	public Date getFechaNacimiento() {
-		return fechaNacimiento;
+	public Date getFecha() {
+		return fecha;
 	}
 
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
 	}
 
 	public String getSexo() {
@@ -106,19 +111,35 @@ public class UsuarioForm {
 		this.sexo = sexo;
 	}
 
-	public String getNombreContactoEmergencia() {
-		return nombreContactoEmergencia;
+	public String getDui() {
+		return dui;
 	}
 
-	public void setNombreContactoEmergencia(String nombreContactoEmergencia) {
-		this.nombreContactoEmergencia = nombreContactoEmergencia;
+	public void setDui(String dui) {
+		this.dui = dui;
 	}
 
-	public String getNumeroContactoEmergencia() {
-		return numeroContactoEmergencia;
+	public String getDireccion() {
+		return direccion;
 	}
 
-	public void setNumeroContactoEmergencia(String numeroContactoEmergencia) {
-		this.numeroContactoEmergencia = numeroContactoEmergencia;
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+
+	public String getBiografia() {
+		return biografia;
+	}
+
+	public void setBiografia(String biografia) {
+		this.biografia = biografia;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 }

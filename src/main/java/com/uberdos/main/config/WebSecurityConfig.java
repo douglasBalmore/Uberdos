@@ -1,4 +1,4 @@
-package com.authentication.main.config;
+package com.uberdos.main.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.authentication.main.valitation.UsuarioDetails;
+import com.uberdos.main.valitation.UsuarioDetails;
 
 @Configuration
 @EnableWebSecurity

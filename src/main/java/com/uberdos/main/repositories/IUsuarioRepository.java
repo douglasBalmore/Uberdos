@@ -1,10 +1,10 @@
-package com.authentication.main.repositories;
+package com.uberdos.main.repositories;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.authentication.main.entities.Usuario;;
+import com.uberdos.main.entities.Usuario;;
 
 public interface IUsuarioRepository extends JpaRepository<Usuario, Long> {
 	
