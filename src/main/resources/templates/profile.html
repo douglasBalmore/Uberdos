@@ -73,7 +73,7 @@
 		        <div class="row">
 		        	<label class="col-sm-4">Fecha de nacimiento</label>:&nbsp;&nbsp;
 			        <div class="col-sm-6">
-			        	<input type="date" name="fecha_nacimiento" th:value="${usuario.fechaNacimiento}" class="form-control"  style="border: 0;">
+			        	<input type="date" name="fecha_nacimiento" th:value="${usuario.fecha}" class="form-control"  style="border: 0;">
 			        	<hr>
 			        </div>
 		        </div>
@@ -85,20 +85,7 @@
 			        	<hr>
 			        </div>
 		        </div>
-		        <div class="row">
-		        	<label class="col-sm-4">Contacto de emergencia</label>:&nbsp;&nbsp;
-			        <div class="col-sm-6">
-			        	<input type="text" th:value="${usuario.nombreContactoEmergencia}" name="nombreContactoEmergencia" class="form-control" style="border: 0;">
-			        	<hr>
-			        </div>
-		        </div>
-		        <div class="row">
-		        	<label class="col-sm-4">Teléfono de emergencia</label>:&nbsp;&nbsp;
-			        <div class="col-sm-6">
-			        	<input type="text" th:value="${usuario.numeroContactoEmergencia}" name="numeroContactoEmergencia" class="form-control" style="border: 0;">
-			        	<hr>
-			        </div>
-		        </div>
+		        
 		        <button class="btn  btn-outline-danger btn-sm btn-block">Eliminar cuenta</button>
 		        <button type="submit" class="btn btn-light btn-sm btn-block">Actualizar campos</button>
 		      </form>
