@@ -30,7 +30,7 @@ public class UsuarioController {
 		this.iUsuarioRepository = iUsuarioRepository;
 	}
 	
-	@GetMapping("/register")
+	@GetMapping("register")
 	public String register(Model model, UsuarioForm usuarioForm) {
 		return "register";
 	}
