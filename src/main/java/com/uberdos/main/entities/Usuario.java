@@ -70,7 +70,7 @@ public class Usuario {
     public Usuario(){}
 
     public Usuario(String name, String apellido, String dui, Date fecha, String direccion, String telefono, String email, String password, 
-    		String sexo, String biografia, boolean enabled, String tipo) {
+    		String sexo, boolean enabled, String tipo) {
         this.name = name;
         this.apellido = apellido;
         this.dui = dui;
@@ -80,7 +80,6 @@ public class Usuario {
         this.email = email;
         this.password = password;
         this.sexo = sexo;
-        this.biografia = biografia;
         this.enabled = enabled;
         this.tipo = tipo;
     }
