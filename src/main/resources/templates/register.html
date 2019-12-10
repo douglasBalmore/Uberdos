@@ -102,12 +102,6 @@ align-items: center;
 				
 				<li class="nav-item"><a class="nav-link" href="#"></a></li>
 			</ul>
-			<form th:action="@{/appLogin}" method="POST" class="form-inline my-2 my-lg-0">
-				<input type="text" name="app_username" class="form-control form-control-sm mr-sm-2" placeholder="Usuario" />
-				<input type="password" name="app_password" class="form-control form-control-sm mr-sm-2 " placeholder="Contraseña" />
-				<button class="btn btn-primary btn-sm my-2 my-sm-0" type="submit">Iniciar
-					sesión</button>
-			</form>
 			<a class="nav-link" th:href="@{userController/register}" style="color: white;">Regístrate</a>
 			
 		</div>
@@ -132,7 +126,15 @@ align-items: center;
 								class="form-control" required />
 						</div>
 						<div class="col-md-6 mb-6">
-							<label>Apellido</label> <input type="text" th:field="*{apellido}"
+							<label>Apellidos</label> <input type="text" th:field="*{apellido}"
+								class="form-control" required />
+						</div>
+						<div class="col-md-6 mb-6">
+							<label>DUI</label> <input type="text" th:field="*{dui}"
+								class="form-control" required />
+						</div>
+						<div class="col-md-6 mb-6">
+							<label>Dirección</label> <input type="text" th:field="*{direccion}"
 								class="form-control" required />
 						</div>
 						<div class="col-md-6 mb-6">
@@ -157,18 +159,20 @@ align-items: center;
 						</div>
 						</div>
 						<div class="form-row">
-						<div class="col-md-4 mb-4">
+						<div class="col-md-6 mb-6">
 							<label class="control-label">Fecha de nacimiento</label><br>
-							<input type="date" name="fecha_nacimiento" required />
+							<input type="date" name="fecha_nacimiento" class="form-control" required />
 						</div>
 						</div>	
 						<div class="form-row">
 						<div class="col-md-8 mb-8">
 							<label class="control-label">Sexo</label><br>
-							<input type="radio" th:field="*{sexo}" value="Masculino" required /> Masculino
-							<input type="radio" th:field="*{sexo}" value="Femenino" required /> Femenino
+							<input type="radio" th:field="*{sexo}" value="M" required /> Masculino
+							<input type="radio" th:field="*{sexo}" value="F" required /> Femenino
 						</div>
+						
 						</div>						
+
 						<div class="form-row" style="margin-top: 2%;">
 					
 				</div>

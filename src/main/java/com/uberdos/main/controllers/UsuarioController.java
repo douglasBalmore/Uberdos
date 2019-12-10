@@ -50,9 +50,9 @@ public class UsuarioController {
 					usuarioForm.getEmail().trim(),
 					new BCryptPasswordEncoder().encode(usuarioForm.getPassword()),
 					usuarioForm.getSexo(),
-					usuarioForm.getBiografia(),
 					true,
-					usuarioForm.getTipo());
+					"Estandar");
+			
 		}
 		else {
 			result.rejectValue("name", "username");
@@ -88,17 +88,6 @@ public class UsuarioController {
 			usuario.setTelefono(req.getParameter("telefono"));
 			usuario.setEnabled(true);
 			
-			/* usuario = new Usuario(id,
-					req.getParameter("name").trim(), 
-					req.getParameter("apellido").trim(),
-					req.getParameter("sexo").trim(),
-					req.getParameter("email").trim(),
-					fecha,
-					req.getParameter("telefono"),
-					req.getParameter("nombreContactoEmergencia"),
-					req.getParameter("numeroContactoEmergencia"),
-					true);
-					*/
 		}
 		else {
 			result.rejectValue("name", "username");
