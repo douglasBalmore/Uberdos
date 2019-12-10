@@ -25,18 +25,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		this.userDetails = userDetails;
 	}
 	
-	String[] resources = new String[]{
-          "/include/**","/css/**","/icons/**","/img/**","/js/**","/layer/**","/images/**","/scss/**","/fonts/**","/jquery/**"
-	};
-	
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 		.authorizeRequests()
-		.antMatchers(resources).permitAll()
+		.antMatchers("/css/**", "/js/**", "/vendor/**", "/scss/**", "/img/**", "/include/**").permitAll()
 		.antMatchers("/", "/userController/log", "/userController/register").permitAll()
 		.antMatchers("/Admin*").access("hasRole('Admin')")
-		.anyRequest(). authenticated().
-		antMatchers("/Estandar*").access("hasRole('Estandar')").
+		.anyRequest(). authenticated()
+		.antMatchers("/Estandar*").access("hasRole('Estandar')").
 		and()
 		.formLogin().
 			loginPage("/").
