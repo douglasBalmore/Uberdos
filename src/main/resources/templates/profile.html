@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <title>Insert title here</title>
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"></link>
+<link th:href="@{/css/navbar-top-fixed.css}" rel="stylesheet"></link>
 <script th:src="@{/js/jquery-3.4.1.min.js}"></script>
 <script th:src="@{/js/tether.min.js}"></script>
 <script th:src="@{/js/bootstrap.min.js}"></script>
 <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
-<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"></link>
-<link th:href="@{/css/navbar-top-fixed.css}" rel="stylesheet"></link>
+
 	
 </head>
 <body>
@@ -66,7 +66,7 @@
 		        <div class="row">
 		        	<label class="col-sm-4">E-mail</label>:&nbsp;&nbsp;
 			        <div class="col-sm-6"> 
-			        	<input type="text" class="form-control" style="border: 0;" th:value="${usuario.email}" name="email">
+			        	<input type="text" readonly class="form-control" style="border: 0;" th:value="${usuario.email}" name="email">
 			        	<hr>
 			        </div>
 		        </div>
@@ -86,8 +86,8 @@
 			        </div>
 		        </div>
 		        
-		        <button class="btn  btn-outline-danger btn-sm btn-block" action="">Eliminar cuenta</button>
-		        <button type="submit" class="btn btn-light btn-sm btn-block" action="#{usuario.update(usuario)}">Actualizar campos</button>
+		        <button class="btn  btn-outline-danger btn-sm btn-block">Eliminar cuenta</button>
+		        <button type="submit" class="btn btn-light btn-sm btn-block">Actualizar campos</button>
 		      </form>
 		      
 		      </div>

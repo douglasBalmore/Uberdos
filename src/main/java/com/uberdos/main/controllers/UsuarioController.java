@@ -102,7 +102,7 @@ public class UsuarioController {
 			return "profile";
 		}
 
-		return "redirect:/profile";
+		return "profile";
 	}
 	
 	@GetMapping("/users")
