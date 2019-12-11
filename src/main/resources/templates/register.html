@@ -4,32 +4,10 @@
 <meta charset="utf-8">
 
 <title>Insert title here</title>
-<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"></link>
-<link th:href="@{/css/registro.css}" rel="stylesheet"></link>
-<link href="/navbar-top-fixed.css" rel="stylesheet"></link>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+<link th:href="@{/css/registro.css}" rel="stylesheet" />
+<link th:href="@{/css/navbar-top-fixed.css}" rel="stylesheet" />
 
-	<script>
-		$(document).ready(function () { 
-			$('#ingresar').on('click', function () {
-				
-				var clave1 = $('#clave1').val();
-                var clave2 = $('#clave2').val();
-                
-                if (clave1 != clave2)
-                {
-                    $('#mensaje').attr('style', 'color:orange');
-                    $('#mensaje').text('¡La constraseñas no son iguales!');
-                }
-                else
-                {
-                	$('#frmUsuario').submit();
-                }
-                
-			});
-
-		});
-	
-	</script>
 
 </head>
 <body>
@@ -127,8 +105,10 @@
             </div>
         </div>
 
-<script th:src="@{/jquery-3.4.1.min.js}"></script>
-<script th:src="@{/tether.min.js}"></script>
-<script th:src="@{/css/bootstrap.min.js}"></script>
+
+<script th:src="@{/js/jquery-3.4.1.min.js}"></script>
+<script th:src="@{/js/registro.js}"></script>
+<script th:src="@{/js/tether.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
 </body>
 </html>

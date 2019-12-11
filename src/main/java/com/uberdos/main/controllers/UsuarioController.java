@@ -40,7 +40,7 @@ public class UsuarioController {
 		
 		Date fecha = new SimpleDateFormat("yyyy-MM-dd").parse(req.getParameter("fecha_nacimiento"));
 		
-		if (usuarioForm.getName().matches("^[a-zA-Z0-9]{3,}$") && req.getParameter("repetirContrasenhia") != null && req.getParameter("repetirContrasenhia").equals(usuarioForm.getPassword())){
+		//if (usuarioForm.getName().matches("^[a-zA-Z0-9]{3,}$") && req.getParameter("repetirContrasenhia") != null && req.getParameter("repetirContrasenhia").equals(usuarioForm.getPassword())){
 			usuario = new Usuario(usuarioForm.getName().trim(), 
 					usuarioForm.getApellido().trim(),
 					usuarioForm.getDui().trim(),
@@ -53,11 +53,11 @@ public class UsuarioController {
 					true,
 					"Estandar");
 			
-		}
+		/*}
 		else {
 			result.rejectValue("name", "username");
 			return "register";
-		}
+		}*/
 
 		try {
 			this.iUsuarioRepository.save(usuario);

@@ -7,8 +7,8 @@
 	<script th:src="@{/tether.min.js}"></script>
 	<script th:src="@{/bootstrap.min.js}"></script>
 	<title>Insert title here</title>
-	<link href="/bootstrap.min.css" rel="stylesheet"></link>
-	<link href="/navbar-top-fixed.css" rel="stylesheet"></link>
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+	<link th:href="@{/css/navbar-top-fixed.css}" rel="stylesheet" />
 </head>
 <body>
 	<form id="logoutForm" method="post" action="/logout">
