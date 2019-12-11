@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+
+<title>Acceso Rápido</title>
+
+<link href="/bootstrap.min.css" rel="stylesheet"></link>
+<link href="/navbar-top-fixed.css" rel="stylesheet"></link>
+
+</head>
+<body>
+	<div class="container bg-light">
+		<br> <br>
+		<ul class="nav nav-pills nav-fill">
+			<li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">ViajesPublicados</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">Notificaciones</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">Mensajes</a></li>
+			<li class="nav-item"><a class="nav-link " href="#" tabindex="-1"
+				aria-disabled="true">Ajustes</a></li>
+		</ul>
+
+		<br> <br>
+
+		<div class="container">
+			<div class="row justify-content-start">
+				<div class="col align-self-start">
+					<a th:href="@{buscarC}">
+						<img src="../img/conductor.png" alt="buscar" /> 
+						Buscar conductor<br/>
+					</a>
+				</div>
+				<div class="col align-self-star">
+					<a  th:href="@{publicar}">
+						<img src="../img/publicar.png" alt="buscar" /> 
+						Publicar Viaje<br/>
+					</a>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<script th:src="@{/jquery-3.1.1.slim.min.js}"></script>
+	<script th:src="@{/tether.min.js}"></script>
+	<script th:src="@{/bootstrap.min.js}"></script>
+
+</body>
+</html>
